@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gửi lời chúc phúc</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="paper">
+    <h1>Gửi lời chúc phúc</h1>
+    <ul class="blessing-list" id="blessing-list">
+      <!-- Câu chúc sẽ được thêm bằng JS -->
+    </ul>
+  </div>
+
+  <script>
+    const blessings = [
+        "Tám năm rực rỡ một thời",
+        "OMG 3Q tượng đài muôn nơi vang lừng",
+        "Tam Quốc huyền thoại sống chung",
+        "Thẻ bài chiến thuật vững khung đỉnh đầu",
+        "Game thủ gắn bó bấy lâu",
+        "Từ ngày đầu bước theo nhau chiến trường",
+        "Lữ Bố oanh liệt phi thường",
+        "Trời không dám chạm một đường cuốn bay",
+        "Triệu Vân lướt ngựa tung mây",
+        "Ngũ hổ tướng gọi chiến ngay không chờ",
+        "Điêu Thuyền khuynh quốc hùng hổ",
+        "Mỹ nhân say đắm ngàn ngơ bao người",
+        "Tào Tháo mưu lược rạch ròi",
+        "Quân cơ định thế đổi dời càn khôn",
+        "Lưu Bị nghĩa cả tâm hồn",
+        "Kết tình huynh đệ cháy hồn trung quân",
+        "Quan Vũ uy dũng vang ngàn",
+        "Thanh long yển nguyệt chém lằn chẳng tha",
+        "Trương Phi hét một tiếng ra",
+        "Quân thù run rẩy vỡ ra chiến bào",
+        "Gia Cát dự liệu phép cao",
+        "Gió Đông nắm giữ binh đào vạn xoay",
+        "Người chơi theo bước hàng ngày",
+        "Thức đêm cày ải đổi thay lực hùng",
+        "Bấm từng chỉ số ung dung",
+        "Build team thần tượng tận cùng đam mê",
+        "Nâng sao tiến cấp đột phá",
+        "Ngủ phẩm sáng rực say mê chưa dừng",
+        "Tám năm đồng đội từng cùng",
+        "Cày chung chiến Boss ngại ngùng chi đâu",
+        "Event rực rỡ muôn màu",
+        "Tích điểm đổi quà vui sao hết ngày",
+        "PK liên server hăng say",
+        "Đối đầu chạm mặt nổ tung võ trường",
+        "Bang hội kết nghĩa thân thương",
+        "Kết giao chiến hữu mười phương tụ về",
+        "Bắc Nam hội ngộ một nhà",
+        "Cùng nhau gắn bó đam mê chẳng mờ",
+        "Server đôi chẳng thần thờ",
+        "Theo bạn theo đội tiếp bờ vinh quang",
+        "Gặp nhau ngoài game mến thương",
+        "Từ bạn ảo hóa tình thương chẳng phai",
+        "Cộng đồng vững mạnh lâu dài",
+        "Tâm huyết góp sức tương lai rạng ngời",
+        "Đột phá tướng mới rạng ngời",
+        "Kỹ năng bùng nổ mở lời kinh bang",
+        "Đấu trí từng bước chẳng hoang",
+        "Chiến lược sắp đội về vang vạn phần",
+        "Fanpage group hội tri âm",
+        "Chia sẻ kinh nghiệm âm thầm giúp nhau",
+        "Anh nhi chăm chỉ từ đầu",
+        "Lắng nghe góp ý sửa mau chẳng chờ",
+        "",
+        "",
+        "Skin mới lấp lánh ánh diệu",
+        "Tướng khoác y phục bao điều lung linh",
+        "Lời chúc gửi khắp hành tinh",
+        "OMG 3Q yên bình vững tin",
+        "Tám năm chưa gọi là dài",
+        "Nhưng là kỷ niệm đong đầy tình thân",
+        "Game Việt chẳng thiếu ngôi sao",
+        "Nhưng để trường tồn biết bao đếm được",
+        "",
+        "",
+        "",
+        "",
+        "Từ server một mở bung",
+        "Tới nay hàng ngàn vẫn cùng niềm vui",
+        "Ngày đầu bỡ ngỡ chơi vui",
+        "Giờ là huyền thoại chẳng nguôi trong lòng",
+        "Bảng xếp hạng vẫn đua cùng",
+        "Năm tháng chẳng khiến tâm trung nhạt nhòa",
+        "Từ dàn tướng cũ ngày qua",
+        "Đến nay biến hóa thật là tuyệt vời",
+        "Nạp hay không vẫn chơi thôi",
+        "Game cân bằng lắm chẳng rơi bỏ người",
+        "Tham gia sự kiện thảnh thơi",
+        "Rủ thêm bạn mới nối lời đam mê",
+        "Từ nhỏ đến lớn ai mê",
+        "",
+        "Game có chiều sâu chiến trường",
+        "Chiến thuật là cốt đo lường người hay",
+        "Từ Bắc chí Nam sum vầy",
+        "Cộng đồng vững chãi dựng xây tên mình",
+        "Bang hội kết nghĩa keo sơn",
+        "Tay cầm chiến lược tâm hồn kết giao",
+        "Sự kiện mừng tuổi dạt dào",
+        "Quà tặng hấp dẫn ngọt ngào niềm vui",
+        "Tám năm vững bước không lùi",
+        "Cộng đồng vững mạnh ngời ngời đam mê",
+        "Tướng mới liên tục ra sau",
+        "Gây cơn chấn động khiến bao người chờ",
+        "",
+        "Giao diện lung linh bất ngờ niềm vui",
+        "Chơi game đâu phải mải vui",
+        "Còn là nơi giữ những người anh em",
+        "Chúc game mãi mãi rạng ngời",
+        "Cộng đồng gắn kết trọn đời không phai",
+        "OMG 3Q mãi là tượng đài",
+        "Tam Quốc thẻ chiến thiên tài Việt Nam"
+    ];
+
+
+    const container = document.getElementById("blessing-list");
+
+    blessings.forEach((text, index) => {
+      const li = document.createElement("li");
+
+      li.innerHTML = `
+        <span class="number">${index + 1}.</span>
+        <span class="pure-text">${text}</span>
+        <button onclick="copyText(this)">Copy</button>
+      `;
+
+      container.appendChild(li);
+    });
+
+    // 📋 Hàm copy
+    function copyText(button) {
+      const text = button.parentElement.querySelector('.pure-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.innerText = "Đã copy!";
+        setTimeout(() => button.innerText = "Copy", 1500);
+      });
+    }
+  </script>
+</body>
+</html>

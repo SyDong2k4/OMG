@@ -8,9 +8,8 @@
 </head>
 <body>
   <div class="paper">
-    <h1>Gửi lời chúc phúc</h1>
+    <h1 class="title">Gửi lời chúc phúc</h1>
     <ul class="blessing-list" id="blessing-list">
-      <!-- Câu chúc sẽ được thêm bằng JS -->
     </ul>
   </div>
 
@@ -133,7 +132,6 @@
       container.appendChild(li);
     });
 
-    // 📋 Hàm copy
     function copyText(button) {
       const text = button.parentElement.querySelector('.pure-text').innerText;
       navigator.clipboard.writeText(text).then(() => {
@@ -144,3 +142,4 @@
   </script>
 </body>
 </html>
+

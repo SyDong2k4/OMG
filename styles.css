@@ -1,6 +1,6 @@
 body {
   font-family: 'Be Vietnam Pro', sans-serif;
-  background: linear-gradient(135deg, #fff5e1, #ffe3b3);
+  background: linear-gradient(145deg, #fceabb, #f8d27c);
   margin: 0;
   padding: 40px;
   display: flex;
@@ -9,12 +9,12 @@ body {
 }
 
 .paper {
-  background: white;
+  background: #fffaf0;
   border-radius: 16px;
   padding: 40px 30px;
   width: 720px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-  border: 1px solid #f3d9a2;
+  border: 2px solid #e3b05a;
 }
 
 .title {
@@ -35,17 +35,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fffdfa;
+  background: linear-gradient(to right, #fff2cc, #ffe9b3);
   padding: 12px 18px;
   margin-bottom: 14px;
-  border-left: 6px solid #f7b84b;
+  border-left: 6px solid #f39c12;
   border-radius: 8px;
   transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .blessing-list li:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
 }
 
 .number {
